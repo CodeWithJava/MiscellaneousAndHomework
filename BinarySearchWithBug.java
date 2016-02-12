@@ -38,7 +38,7 @@ public class BinarySearchWithBug
 		while(l <= r)
 		{
 			int m = l + (r - l ) / 2;
-			if(nums[m] == target)
+			if(nums[m] == target)//I am here! I am wonderful bug which starts from this line
 			{
 				iteration++;
 				int p = binarySearch(nums,l,m - 1,iteration,target);
@@ -48,7 +48,7 @@ public class BinarySearchWithBug
 				if(q != -1)
 					iteration++;
 				return iteration;
-			}
+			}//I am here! I am wonderful bug which ends to this line
 			else if (nums[m] < target)
 				l = m + 1;
 			else
