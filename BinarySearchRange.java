@@ -56,7 +56,7 @@ public class BinarySearchRange
 	{
 		if(target < nums[l] || target > nums[r])
 			return -1;
-		while(l <= r)
+		while(l <= r)//
 		{
 			int m = l + (r - l ) / 2;
 			if(nums[m] == target)
