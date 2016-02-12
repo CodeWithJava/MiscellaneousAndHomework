@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.Random;
 import java.io.FileInputStream;
 import java.io.IOException;
-public class BinarySearchWithBug
+public class BinarySearchRange
 {
 	public static void main (String [] args) throws IOException
 	{
@@ -23,7 +23,7 @@ public class BinarySearchWithBug
 				nums[i] = data.nextInt();
 			}
 			int target = data.nextInt();
-			int x = binarySearch(nums,0,nums.length - 1,0,target);
+			int x = binarySearch(nums,target);
 			if(x == -1)
 				System.out.println("NOT FOUND " + target);
 			else
@@ -31,30 +31,41 @@ public class BinarySearchWithBug
 			loop--;
 		}
 	}
-	private static int binarySearch(int [] nums,int l,int r,int iteration,int target)
+	private static int binarySearch(int [] nums,int target)
+	{
+		int x = binarySearch(nums,0,nums.length - 1,target);
+		if(x == -1)
+			return -1;
+		int l = 0;
+		int r = 0;
+		int t = x;
+		while(t != -1)
+		{
+			l = t;
+			t = binarySearch(nums,0,t - 1,target);
+		}
+		t = x;
+		while(t != -1)
+		{
+			r = t;
+			t = binarySearch(nums,t+1,nums.length - 1,target);
+		}
+		return r - l + 1;
+	}
+	private static int binarySearch(int [] nums,int l,int r,int target)
 	{
 		if(target < nums[l] || target > nums[r])
 			return -1;
 		while(l <= r)
 		{
 			int m = l + (r - l ) / 2;
-			if(nums[m] == target)//I am here! I am wonderful bug which starts from this line
-			{
-				iteration++;
-				int p = binarySearch(nums,l,m - 1,iteration,target);
-				if(p != -1)
-					iteration++;
-				int q = binarySearch(nums,m + 1,r,iteration,target);
-				if(q != -1)
-					iteration++;
-				return iteration;
-			}//I am here! I am wonderful bug which ends to this line
-			else if (nums[m] < target)
-				l = m + 1;
+			if(nums[m] == target)
+				return m;
+			else if (target < nums[m])
+				r = m - 1;
 			else
-				r = m - 1;	
+				l = m + 1;
 		}
 		return -1;
 	}
-
 }
