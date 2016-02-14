@@ -14,8 +14,7 @@ public class Tries
 		{
 			if(node.children[x - 'a'] == null)
 				node.children[x - 'a'] = new Node();
-			else
-				node = node.children[x - 'a'];
+			node = node.children[x - 'a'];
 		}
 		node.item = word;
 	}
