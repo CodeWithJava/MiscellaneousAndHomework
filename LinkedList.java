@@ -22,7 +22,7 @@ public class Solution
 {
 	public static void main(String [] args) throws IOException
 	{
-		MyLinkedList a = new MyLinkedList();
+		DoubleLinkedList a = new DoubleLinkedList();
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Please input path of the data file");
 		String path = scanner.next();
@@ -69,15 +69,17 @@ class ListNode
 		next = null;
 	}
 }
-class MyLinkedList
+class DoubleLinkedList
 {
 	private int size;
 	public ListNode head;
 	public ListNode tail;
 
-	MyLinkedList()
+	DoubleLinkedList()
 	{
 		size = 0;
+		head = null;
+		tail = null;
 	}
 	
 	public void addHead(List<Integer> nums)
