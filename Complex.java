@@ -99,7 +99,7 @@ public class Complex
 	public String toString()
 	{
 		if(x == 0 && y == 0)
-			return 0 + "";
+			return 0.0 + "";
 		if(x == 0)
 			return y + "i";
 		if(y == 0)
