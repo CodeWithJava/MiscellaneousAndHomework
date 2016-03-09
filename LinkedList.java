@@ -124,7 +124,7 @@ class DoubleLinkedList
 		ListNode p = head;
 		while(p != null)
 		{
-			sb.append(p.val);
+			sb.append(p.val + " ");
 			p = p.next;
 		}
 		return sb.substring(0,sb.length() - 1);
@@ -162,6 +162,7 @@ class DoubleLinkedList
 
 	private void removeTail()
 	{
+        tail.pre.next = null;
 		tail = tail.pre;
 		size--;
 	}
