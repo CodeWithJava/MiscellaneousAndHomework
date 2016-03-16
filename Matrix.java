@@ -94,6 +94,6 @@ public class Matrix
                                 sb.append(array[i * column + j] + " ");
                         sb.append("\n");
                 }
-                return sb.substring(0,sb.length() - 1);
+                return sb.toString();
         }
 }
