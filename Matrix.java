@@ -80,13 +80,14 @@ public class Matrix
                 return m;
         }
 
-        public void output()
+        public String toString()
         {
+                StringBuilder sb = new StringBuilder();
                 for(int i = 0;i < this.row;i++)
                 {
                         for(int j = 0;j < this.column;j++)
-                                System.out.print(array[i * column + j] + " ");
-                        System.out.println();
+                                sb.append(array[i * column + j] + " ");
+                        sb.appned("/n");
                 }
         }
 }
