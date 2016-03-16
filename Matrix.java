@@ -3,7 +3,12 @@ public class Matrix
         private double [] array;
         private int row;
         private int column;
-        
+    
+        Matrix()
+        {
+                this(2,2);
+        }
+
         Matrix(int row,int column)
         {
                 this.row = row;
@@ -43,7 +48,7 @@ public class Matrix
                         return this.array[row * this.column + column];
         }
 
-        public Matrix setMainDiagonal(Matrix m)
+        public static Matrix setMainDiagonal(Matrix m)
         {
                 if(m.row != m.column)
                         return null;
@@ -54,7 +59,7 @@ public class Matrix
                 return m;
         }
 
-        public Matrix add(Matrix m1,Matrix m2)
+        public static Matrix add(Matrix m1,Matrix m2)
         {
                 if(m1.row != m2.row || m1.column != m2.column)
                         return null;
@@ -67,7 +72,7 @@ public class Matrix
                 return m;
         }
 
-        public Matrix subtract(Matrix m1,Matrix m2)
+        public static Matrix subtract(Matrix m1,Matrix m2)
         {
                 if(m1.row != m2.row || m1.column != m2.column)
                         return null;
@@ -87,7 +92,8 @@ public class Matrix
                 {
                         for(int j = 0;j < this.column;j++)
                                 sb.append(array[i * column + j] + " ");
-                        sb.appned("/n");
+                        sb.append("\n");
                 }
+                return sb.substring(0,sb.length() - 1);
         }
 }
