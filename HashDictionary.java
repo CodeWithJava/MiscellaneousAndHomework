@@ -70,8 +70,6 @@ class HashTable
         public void add(String s)
         {
                 size++;
-                if(size > capacity)
-                        expend();
                 int i = hash(s);
                 int collision = 0;
                 while(table[i] != null)
