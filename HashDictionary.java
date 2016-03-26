@@ -78,7 +78,7 @@ class HashTable
                 {
                         if(table[i].equals(s))
                                 size--;
-                        i = (i+1) % table.length;
+                        i = (i+1) & (table.length-1);
                         collision++;
                         if(collision >= 10)
                                 collision = 10;
@@ -94,7 +94,7 @@ class HashTable
                 {
                         if(table[i].equals(s))
                                 return true;
-                        i = (i+1) % table.length;
+                        i = (i+1) & (table.length-1);
                 }
                 return false;
         }
