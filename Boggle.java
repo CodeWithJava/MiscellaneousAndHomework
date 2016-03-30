@@ -70,17 +70,19 @@ public class Boggle
 				wordSearch(board,i,j,"",visited,trie);
 
 		int i = 0;
-
+		int j = 0;
 		for(String word: set)
 		{
 			System.out.println(word + " is a word");
 			i++;
-			if(i == 3)
+			j++;
+			if(i == 5)
 			{
 				System.out.println();
 				i = 0;
 			}
 		}
+		System.out.println("\nThere are " + j + " words in the matrix !!!");
 	}
 
 	private void wordSearch(String [][] board,int i,int j,String subword,boolean [][] visited,Trie trie)
