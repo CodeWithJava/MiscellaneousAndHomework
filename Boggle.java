@@ -68,8 +68,19 @@ public class Boggle
 		for(int i = 0;i < r;i++)
 			for(int j = 0;j < c;j++)
 				wordSearch(board,i,j,"",visited,trie);
+
+		int i = 0;
+
 		for(String word: set)
+		{
 			System.out.println(word + " is a word");
+			i++;
+			if(i == 3)
+			{
+				System.out.println();
+				i = 0;
+			}
+		}
 	}
 
 	private void wordSearch(String [][] board,int i,int j,String subword,boolean [][] visited,Trie trie)
