@@ -7,8 +7,8 @@ Course: CPE 593 Applied Data Structures and Algorithms
 Title: TrieDictionary
 JDK Version: 1.8.0_77
 Author: Yabin Han
-Create Date: February 26th 2016
-Finish Date: February 29th 2016
+Create Date: March 28th 2016
+Finish Date: March 30th 2016
 Description: Implement Boggle
 */
 
